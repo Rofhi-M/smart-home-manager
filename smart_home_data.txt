@@ -1,0 +1,3 @@
+Light,rovo,toilet,yes,49,white
+Thermostat,livingroom thermostate,livingroom,no,,0.0
+Thermostat,Outdoor thermostat,outdoor,yes,cooling,40.0
