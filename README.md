@@ -17,7 +17,7 @@ A robust, console-based Java application designed to manage and monitor smart ho
 ## 📂 Project Structure
 
 ```text
-SmartHomeHub/
+SmartHomeHub/Within the src file
 │
 ├── HomeMain.java                # Console User Interface & Menu Controller
 ├── HomeManager.java             # Business Logic & Collection Management Engine
