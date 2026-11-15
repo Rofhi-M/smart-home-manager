@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.HashSet;
 
 public class HomeManager {
     private ArrayList<SmartDevice> sds;
@@ -12,6 +13,7 @@ public class HomeManager {
     public HomeManager() {
         sds = new ArrayList<>();
         sdsMap = new HashMap<>();
+        registeredDevices = new HashSet<>();
     }
 
     public boolean addItem(SmartDevice sd) {
