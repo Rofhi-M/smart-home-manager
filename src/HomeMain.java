@@ -30,12 +30,19 @@ public class HomeMain {
                         String lName = scanner.nextLine();
                         System.out.print("Enter room: ");
                         String lRoom = scanner.nextLine();
-                        System.out.print("Is it on? (true/false): ");
-                        boolean lIsOn = Boolean.parseBoolean(scanner.nextLine());
-                        System.out.print("Enter brightness (0-100): ");
-                        int brightness = Integer.parseInt(scanner.nextLine());
-                        System.out.print("Enter color (e.g., Warm White, Blue): ");
-                        String color = scanner.nextLine();
+                        System.out.print("Do you want to turn appliance? (Yes/NO):: ");
+                        String lIsOn = scanner.nextLine();
+
+                        int brightness = 0;
+                        String color = "";
+
+                        if(lIsOn.equalsIgnoreCase("yes")){
+                            System.out.print("Enter brightness (0-100): ");
+                            brightness = Integer.parseInt(scanner.nextLine());
+                            System.out.print("Enter color (e.g., Warm White, Blue): ");
+                            color = scanner.nextLine();
+                        }
+
 
                         home.addItem(new SmartLight(lName, lRoom, lIsOn, brightness, color));
                         System.out.println("✅ Smart Light added successfully!");
@@ -46,12 +53,18 @@ public class HomeMain {
                         String tName = scanner.nextLine();
                         System.out.print("Enter room: ");
                         String tRoom = scanner.nextLine();
-                        System.out.print("Is it on? (true/false): ");
-                        boolean tIsOn = Boolean.parseBoolean(scanner.nextLine());
-                        System.out.print("Enter mode (Heating/Cooling): ");
-                        String mode = scanner.nextLine();
-                        System.out.print("Enter target temperature (°C): ");
-                        double temp = Double.parseDouble(scanner.nextLine());
+                        System.out.print("Do you want to turn appliance? (Yes/NO): ");
+                        String tIsOn = scanner.nextLine();
+
+                        double temp = 0.0;
+                        String mode = "";
+
+                        if(tIsOn.equalsIgnoreCase("yes")){
+                            System.out.print("Enter mode (Heating/Cooling): ");
+                            mode = scanner.nextLine();
+                            System.out.print("Enter target temperature (°C): ");
+                            temp = Double.parseDouble(scanner.nextLine());
+                        }
 
                         home.addItem(new SmartThermostat(tName, tRoom, tIsOn, mode, temp));
                         System.out.println("✅ Smart Thermostat added successfully!");
