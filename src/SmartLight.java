@@ -2,7 +2,7 @@ public class SmartLight extends SmartDevice {
     private int brightness;
     private String color;
 
-    public SmartLight(String deviceName, String room, boolean isOn, int brightness, String color) {
+    public SmartLight(String deviceName, String room, String isOn, int brightness, String color) {
         super(deviceName, room, isOn);
         this.brightness = brightness;
         this.color = color;
