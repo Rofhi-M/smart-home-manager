@@ -1,9 +1,9 @@
 public class SmartDevice {
     private String deviceName;
     private String room;
-    private boolean isOn;
+    private String isOn;
 
-    public SmartDevice(String deviceName, String room, boolean isOn) {
+    public SmartDevice(String deviceName, String room, String isOn) {
         this.deviceName = deviceName;
         this.room = room;
         this.isOn = isOn;
@@ -32,11 +32,11 @@ public class SmartDevice {
         this.room = room;
     }
 
-    public boolean getIsOn() {
+    public String getIsOn() {
         return isOn;
     }
 
-    public void setIsOn(boolean isOn) {
+    public void setIsOn(String isOn) {
         this.isOn = isOn;
     }
 
