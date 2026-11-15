@@ -2,7 +2,7 @@ public class SmartThermostat extends SmartDevice {
     private String mode;
     private double temp;
 
-    public SmartThermostat(String deviceName, String room, boolean isOn, String mode, double temp) {
+    public SmartThermostat(String deviceName, String room, String isOn, String mode, double temp) {
         super(deviceName, room, isOn);
         this.mode = mode;
         this.temp = temp;
