@@ -97,6 +97,8 @@ public class HomeMain {
                                 System.out.println("Device not found!");
                             }
 
+                            break;
+
                     case 7:
                         home.saveFile("smart_home_data.txt");
                         System.out.println("Exiting SmartHomeHub. Have a great day!");
@@ -109,7 +111,7 @@ public class HomeMain {
                 System.out.println("❌ Invalid input format. Please enter a valid number where required.");
             }
 
-        }while(choice != 6);
+        }while(choice != 7);
 
         scanner.close();
     }
