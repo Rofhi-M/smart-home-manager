@@ -5,7 +5,7 @@ public class HomeMain {
         Scanner scanner = new Scanner(System.in);
         HomeManager home = new HomeManager();
 
-        home.saveFile("smart_home_data.txt");
+        home.loadFile("smart_home_data.txt");
 
         int choice = 0;
 
