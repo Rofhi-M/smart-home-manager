@@ -28,6 +28,7 @@ public class SmartDevice {
     public void setRoom(String room) {
         if(room == null) {
             System.out.println("Please enter a room name");
+            return;
         }
         this.room = room;
     }
