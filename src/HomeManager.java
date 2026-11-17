@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
+
 public class HomeManager {
     private ArrayList<SmartDevice> sds;
     private Map<String, SmartDevice> sdsMap;
@@ -17,7 +18,7 @@ public class HomeManager {
     }
 
     public boolean addItem(SmartDevice sd) {
-        String key = sd.getDeviceName();
+        String key = sd.getDeviceName().trim().toLowerCase();
         boolean isUnique = registeredDevices.add(key);
 
         if (!isUnique) {
@@ -31,7 +32,7 @@ public class HomeManager {
     }
 
     public SmartDevice getItem(String deviceName) {
-        return this.sdsMap.get(deviceName.toLowerCase());
+        return this.sdsMap.get(deviceName.trim().toLowerCase());
     }
 
     public double getAverageTemp() {
@@ -64,7 +65,7 @@ public class HomeManager {
             for (SmartDevice sd : sds) {
                 if (sd instanceof SmartThermostat) {
                     SmartThermostat t = (SmartThermostat) sd;
-                    pw.println("Thermostat," + t.getDeviceName() + "," + t.getRoom() + "," + t.getIsOn() + "," + t.getMode() + "," + t.getTemp());
+                    pw.println("Thermostat," + t.getDeviceName() + ",mmmm " + t.getRoom() + "," + t.getIsOn() + "," + t.getMode() + "," + t.getTemp());
                 } else if (sd instanceof SmartLight) {
                     SmartLight l = (SmartLight) sd;
                     pw.println("Light," + l.getDeviceName() + "," + l.getRoom() + "," + l.getIsOn() + "," + l.getBrightness() + "," + l.getColor());
@@ -94,7 +95,7 @@ public class HomeManager {
                     if(type.equalsIgnoreCase("Thermostat") && parts.length == 6) {
                         String deviceName = parts[1];
                         String room = parts[2];
-                        boolean isOn = Boolean.parseBoolean(parts[3]);
+                        String isOn = parts[3];
                         String mode = parts[4];
                         double temp = Double.parseDouble(parts[5]);
 
@@ -103,7 +104,7 @@ public class HomeManager {
                     else if(type.equalsIgnoreCase("Light") && parts.length == 6) {
                         String deviceName = parts[1];
                         String room = parts[2];
-                        boolean isOn = Boolean.parseBoolean(parts[3]);
+                        String isOn =parts[3];
                         int brightness =  Integer.parseInt(parts[4]);
                         String color = parts[5];
 
