@@ -65,7 +65,7 @@ public class HomeManager {
             for (SmartDevice sd : sds) {
                 if (sd instanceof SmartThermostat) {
                     SmartThermostat t = (SmartThermostat) sd;
-                    pw.println("Thermostat," + t.getDeviceName() + ",mmmm " + t.getRoom() + "," + t.getIsOn() + "," + t.getMode() + "," + t.getTemp());
+                    pw.println("Thermostat," + t.getDeviceName() + "," + t.getRoom() + "," + t.getIsOn() + "," + t.getMode() + "," + t.getTemp());
                 } else if (sd instanceof SmartLight) {
                     SmartLight l = (SmartLight) sd;
                     pw.println("Light," + l.getDeviceName() + "," + l.getRoom() + "," + l.getIsOn() + "," + l.getBrightness() + "," + l.getColor());
@@ -99,7 +99,7 @@ public class HomeManager {
                         String mode = parts[4];
                         double temp = Double.parseDouble(parts[5]);
 
-                        sds.add(new SmartThermostat(deviceName, room, isOn, mode, temp));
+                        addItem(new SmartThermostat(deviceName, room, isOn, mode, temp));
                     }
                     else if(type.equalsIgnoreCase("Light") && parts.length == 6) {
                         String deviceName = parts[1];
@@ -108,7 +108,7 @@ public class HomeManager {
                         int brightness =  Integer.parseInt(parts[4]);
                         String color = parts[5];
 
-                        sds.add(new SmartLight(deviceName, room, isOn, brightness, color));
+                        addItem(new SmartLight(deviceName, room, isOn, brightness, color));
                     }
 
                 }
