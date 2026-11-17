@@ -6,7 +6,7 @@ public class DeviceLog {
     private final String action;
     private final LocalDateTime timestamp;
 
-    public DeviceLog(String device, String action, LocalDateTime timestamp) {
+    public DeviceLog(String device, String action) {
         this.device = device;
         this.action = action;
         this.timestamp = LocalDateTime.now();

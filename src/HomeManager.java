@@ -4,17 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 
 
 public class HomeManager {
     private ArrayList<SmartDevice> sds;
     private Map<String, SmartDevice> sdsMap;
     private Set<String> registeredDevices;
+    private final List<DeviceLog> logs;
 
     public HomeManager() {
         sds = new ArrayList<>();
         sdsMap = new HashMap<>();
         registeredDevices = new HashSet<>();
+        logs = new ArrayList<>();
     }
 
     public boolean addItem(SmartDevice sd) {
@@ -28,7 +31,19 @@ public class HomeManager {
 
         this.sds.add(sd);
         this.sdsMap.put(key, sd);
+        this.logs.add(new DeviceLog(sd.getDeviceName(), "Added to " + sd.getRoom()));
         return true;
+    }
+
+    public void printLogs() {
+        System.out.println("\n=== Device Activity logs ===");
+        if (logs.isEmpty()) {
+            System.out.println("No activity recorded yet.");
+            return;
+        }
+        for (DeviceLog  log : logs) {
+            System.out.println(log);
+        }
     }
 
     public SmartDevice getItem(String deviceName) {

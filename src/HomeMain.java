@@ -98,8 +98,11 @@ public class HomeMain {
                             }
 
                             break;
-
                     case 7:
+                        home.printLogs();
+                        break;
+
+                    case 8:
                         home.saveFile("smart_home_data.txt");
                         System.out.println("Exiting SmartHomeHub. Have a great day!");
                         break;
@@ -111,7 +114,7 @@ public class HomeMain {
                 System.out.println("❌ Invalid input format. Please enter a valid number where required.");
             }
 
-        }while(choice != 7);
+        }while(choice != 8);
 
         scanner.close();
     }
