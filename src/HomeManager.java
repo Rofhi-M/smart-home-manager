@@ -134,5 +134,4 @@ public class HomeManager {
             System.out.println("An error occurred while loading: " + e.getMessage());
         }
     }
-
 }

@@ -22,8 +22,7 @@ public class SmartLight extends SmartDevice {
 
     public void setBrightness(int brightness) {
         if(brightness < 0 || brightness > 100) {
-            System.out.println("Invalid brightness choice between 0 and 100");
-            return;
+            throw new InvalidDeviceSettingException("Invalid brightness choice between 0 and 100");
         }
 
         this.brightness = brightness;

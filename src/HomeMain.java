@@ -18,8 +18,10 @@ public class HomeMain {
             System.out.println("3. Check Average Thermostat Temperature");
             System.out.println("4. Filter Devices by Room");
             System.out.println("5. Save Data to File");
-            System.out.println("6. Exit and Save");
-            System.out.print("Choose an option (1-6): ");
+            System.out.println("6. Search Device by Name");
+            System.out.println("7. View Activity Logs");
+            System.out.println("8. Exit and Save");
+            System.out.print("Choose an option (1-8): ");
 
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -44,8 +46,10 @@ public class HomeMain {
                         }
 
 
-                        home.addItem(new SmartLight(lName, lRoom, lIsOn, brightness, color));
+                        if(home.addItem(new SmartLight(lName, lRoom, lIsOn, brightness, color))){;
                         System.out.println("✅ Smart Light added successfully!");
+                        }
+
                         break;
 
                     case 2:
@@ -57,7 +61,7 @@ public class HomeMain {
                         String tIsOn = scanner.nextLine();
 
                         double temp = 0.0;
-                        String mode = "";
+                        String mode = "off";
 
                         if(tIsOn.equalsIgnoreCase("yes")){
                             System.out.print("Enter mode (Heating/Cooling): ");
@@ -66,8 +70,10 @@ public class HomeMain {
                             temp = Double.parseDouble(scanner.nextLine());
                         }
 
-                        home.addItem(new SmartThermostat(tName, tRoom, tIsOn, mode, temp));
+                        if(home.addItem(new SmartThermostat(tName, tRoom, tIsOn, mode, temp))){
                         System.out.println("✅ Smart Thermostat added successfully!");
+                        }
+
                         break;
 
                     case 3:
@@ -108,12 +114,13 @@ public class HomeMain {
                         break;
 
                     default:
-                        System.out.println("❌ Invalid choice. Please enter a number between 1 and 6.");
+                        System.out.println("❌ Invalid choice. Please enter a number between 1 and 8.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("❌ Invalid input format. Please enter a valid number where required.");
+                System.out.println("❌ Invalid input format. Please enter a valid input where required.");
+            } catch (InvalidDeviceSettingException e) {
+            System.out.println("⚠️ Setting Error: " + e.getMessage());
             }
-
         }while(choice != 8);
 
         scanner.close();

@@ -13,9 +13,8 @@ public class SmartThermostat extends SmartDevice {
     }
 
     public void setMode(String mode) {
-        if(!mode.equalsIgnoreCase("heating") && !mode.equalsIgnoreCase("cooling")) {
-            System.out.println("Invalid mode.");
-            return;
+        if (mode == null || (!mode.equalsIgnoreCase("heating") && !mode.equalsIgnoreCase("cooling") && !mode.equalsIgnoreCase("off"))) {
+            throw new InvalidDeviceSettingException("Invalid mode. Choose Heating, Cooling, or Off.");
         }
         this.mode = mode;
     }

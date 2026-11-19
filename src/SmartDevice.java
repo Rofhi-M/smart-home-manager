@@ -14,9 +14,8 @@ public class SmartDevice {
     }
 
     public void setDeviceName(String deviceName){
-        if(deviceName == null) {
-            System.out.println("Please enter a device name");
-            return;
+        if (deviceName == null || deviceName.trim().isEmpty() || deviceName.trim().matches("\\d+")) {
+            throw new InvalidDeviceSettingException("Device name cannot be empty or numbers only.");
         }
         this.deviceName = deviceName;
     }
@@ -26,10 +25,10 @@ public class SmartDevice {
     }
 
     public void setRoom(String room) {
-        if(room == null) {
-            System.out.println("Please enter a room name");
-            return;
+        if (room == null || room.trim().isEmpty() || room.trim().matches("\\d+")) {
+            throw new InvalidDeviceSettingException("Room name cannot be empty or numbers only.");
         }
+
         this.room = room;
     }
 
