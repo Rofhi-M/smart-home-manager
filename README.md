@@ -15,6 +15,7 @@ A robust, console-based Java application designed to manage and monitor smart ho
 ---
 
 ## 📂SmartHomeHub/Within the src file
+
 │
 ├── HomeMain.java                        # Console User Interface & Menu Controller
 ├── HomeManager.java                     # Business Logic & Collection Management Engine
@@ -24,6 +25,7 @@ A robust, console-based Java application designed to manage and monitor smart ho
 ├── DeviceLog.java                       # Immutable Activity Audit Record
 ├── InvalidDeviceSettingException.java   # Custom Exception for Invalid Device Configurations
 └── smart_home_data.txt                  # Local Persistent Data Store
+
 
 ## How to Run
 1. Clone the repository:
