@@ -14,17 +14,16 @@ A robust, console-based Java application designed to manage and monitor smart ho
 
 ---
 
-## 📂 Project Structure
-
-```text
-SmartHomeHub/Within the src file
+## 📂SmartHomeHub/Within the src file
 │
-├── HomeMain.java                # Console User Interface & Menu Controller
-├── HomeManager.java             # Business Logic & Collection Management Engine
-├── SmartDevice.java             # Abstract Base Model Class
-├── SmartLight.java              # Light Device Subclass (Brightness, Color)
-├── SmartThermostat.java         # Thermostat Device Subclass (Mode, Temperature)
-└── smart_home_data.txt          # Local Persistent Data Store
+├── HomeMain.java                        # Console User Interface & Menu Controller
+├── HomeManager.java                     # Business Logic & Collection Management Engine
+├── SmartDevice.java                     # Base Model Class with Input Validation
+├── SmartLight.java                      # Light Device Subclass (Brightness, Color)
+├── SmartThermostat.java                 # Thermostat Device Subclass (Mode, Temperature)
+├── DeviceLog.java                       # Immutable Activity Audit Record
+├── InvalidDeviceSettingException.java   # Custom Exception for Invalid Device Configurations
+└── smart_home_data.txt                  # Local Persistent Data Store
 
 ## How to Run
 1. Clone the repository:
